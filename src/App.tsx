@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 import LoginSection from './Components/signin/LoginSection'
-import Navbar from './Components/Navbar'
+import SignupSection from './Components/signup/SignupSection'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <LoginSection />
+      {/* <LoginSection /> */}
+      <SignupSection />
     </div>
   )
 }
