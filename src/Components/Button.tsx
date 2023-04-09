@@ -25,8 +25,8 @@ const InteractButton = styled.button`
   touch-action: manipulation;
   width: auto;
 :hover {
-    color: #3D3D3D;
-    background-color: #BBF284;
+    color: #fff;
+    background-color: hsl(90, 78%, 12%);
   }
 `
 
