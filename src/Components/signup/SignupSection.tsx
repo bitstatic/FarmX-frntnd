@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '../TextField'
 import Button from '../Button'
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 const Signin = styled.section`
     display: flex;
@@ -32,10 +33,10 @@ function SignupSection() {
         <TextField name='Email ID' id='mail' type='text' />
         <TextField name='Password' id='pass' type='password' />
         <TextField name='Confirm Password' id='name' type='password' />
-        <Button Text='Sign Up' />
+        <Button Text='Sign Up' onClick={() => {console.log("clicked")}}/>
         <span>
           Already have an account?  
-          <a href="#"> Sign In.</a>
+          <a><Link to= '../login'>  Sign In.</Link></a>
         </span>
     </Signin>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-const InteractButton = styled.button`
+const NavButton = styled.button`
   background-color: #111827;
   border: 1px solid transparent;
   border-radius: .75rem;
@@ -25,25 +25,28 @@ const InteractButton = styled.button`
   -webkit-user-select: none;
   touch-action: manipulation;
   width: auto;
+  *{
+    text-decoration: none;
+    color: #fff;
+  }
 :hover {
     color: #fff;
-    background-color: hsl(90, 78%, 12%);
   }
 `
 
 interface prop{
   Text: String;
   onClick: () => void;
-  // Add : string;
+  Add : string;
 }
 
-function Button({Text ,onClick}:prop) {
+function Button({Text ,onClick , Add = '' }:prop) {
   return (
-    <InteractButton onClick={onClick}> 
-    {/* <Link to= {Add}>
-    </Link> */}
+    <NavButton onClick={onClick}> 
+    <Link to= {Add}>
         {Text}
-    </InteractButton>
+    </Link>
+    </NavButton>
   )
 }
 
