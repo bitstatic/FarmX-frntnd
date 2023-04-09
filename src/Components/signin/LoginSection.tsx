@@ -16,6 +16,11 @@ const Login = styled.section`
     h2{
     font-size:2.5rem;
     }
+    a{
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+    }
 `
 
 function LoginSection() {
@@ -26,6 +31,10 @@ function LoginSection() {
         <TextField name="Email" id="email" type="text"/>
         <TextField name="Password" id="pass" type="password"/>
         <Button Text="Log In" />
+        <span>
+          Don't have an account?  
+          <a href="#"> Sign Up?</a>
+        </span>
     </Login>
   )
 }
