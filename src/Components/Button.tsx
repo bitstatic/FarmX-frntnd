@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
 
 const InteractButton = styled.button`
   background-color: #111827;
@@ -27,7 +26,7 @@ const InteractButton = styled.button`
   width: auto;
 :hover {
     color: #fff;
-    background-color: hsl(90, 78%, 12%);
+    background-color: #119748;
   }
 `
 
@@ -40,8 +39,6 @@ interface prop{
 function Button({Text ,onClick}:prop) {
   return (
     <InteractButton onClick={onClick}> 
-    {/* <Link to= {Add}>
-    </Link> */}
         {Text}
     </InteractButton>
   )

@@ -31,6 +31,7 @@ const NavButton = styled.button`
   }
 :hover {
     color: #fff;
+    background-color: #119748;
   }
 `
 

@@ -9,9 +9,9 @@ const Signin = styled.section`
     align-items: center;
     gap: 50px;
     flex-direction: column;
-    padding-bottom: 10rem;
+    // padding-bottom: rem;
     h1{
-      margin: 0vh 0rem;
+      margin: 5vh 0rem;
       font-size: 3.5rem;
     }
     h2{
