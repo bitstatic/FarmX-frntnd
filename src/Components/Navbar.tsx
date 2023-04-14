@@ -1,6 +1,7 @@
 import React from 'react'
 import {FaRegUserCircle} from "react-icons/fa"
 import styled from "styled-components"
+import logo from "./title_logo.svg"
 
 const NavBar= styled.nav`
   width: 95%;
@@ -11,7 +12,7 @@ const NavBar= styled.nav`
 function Navbar() {
   return (
     <NavBar>
-        <img src="./title_logo.svg" alt=""  width={"50px"} />
+        <img src={logo} alt=""  width={"50px"} />
         <FaRegUserCircle size="2.2rem" />
     </NavBar>
   )

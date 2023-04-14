@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import NavButton from "../SpashScreen/NavButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "../Button";
 
 const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 40vh;
+  gap: 32vh;
   justify-content: center;
   align-items: center;
   h1 {
@@ -21,12 +21,15 @@ const Container = styled.div`
 `;
 
 function SplashScreen() {
+  const nav=useNavigate();
   return (
     <div>
       <Container>
         <h1>FarmX</h1>
         <span>
-          <NavButton
+          <Button Text="Log In" onClick={()=>{nav("./login")}}/>
+          <Button Text="Sign Up" onClick={()=>{nav("./signup")}}/>
+          {/* <NavButton
             Text="Log In"
             Add="./login"
             onClick={() => {
@@ -39,7 +42,7 @@ function SplashScreen() {
             onClick={() => {
               console.log("clicked");
             }}
-          />
+          /> */}
         </span>
       </Container>
     </div>
