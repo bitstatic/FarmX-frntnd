@@ -4,10 +4,11 @@ import SearchField from './SearchField'
 import Button from '../Button'
 
 const SearchSec = styled.div`
+
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
+    margin-bottom: 2rem;
     max-width: 90%;
     >Button{
         margin-top: 1rem;

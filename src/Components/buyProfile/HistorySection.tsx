@@ -4,8 +4,7 @@ import HistoryCard from "./HistoryCard";
 import dummy from "/imagedummy.png";
 
 const HistSec = styled.div`
-width: 90%; 
-  > ul {
+  >ul{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,11 +14,11 @@ width: 90%;
     border: 1px solid rgba(61, 61, 61, 0.3);
     border-radius: 5px;
   }
-  li {
-  width: 100%; 
-    list-style: none;
-  }
-`;
+    li{
+      list-style: none;
+    }
+`
+
 
 function HistorySection() {
   const items = [
