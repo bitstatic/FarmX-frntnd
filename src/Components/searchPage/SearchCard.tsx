@@ -35,19 +35,26 @@ const Card = styled.div`
         }
     }
 `
+interface Props {
+    Name: string;
+    Stock: number;
+    Payment: number;
+    currentHeighestBid: string;
+    img: string;
+  }
 
-function SearchCard() {
+function SearchCard({Name, Stock, Payment, currentHeighestBid, img}: Props) {
   return (
     <Card onClick={() => {console.log("Card cliced")}}>
         <div className='hist-card-container'>
-            <img src={dummy} alt="" />
+            <img src={img} alt="" />
             <div className='card-text'>
-                <h3>Name</h3>
+                <h3>{Name}</h3>
                 <div className='row'>
-                    <p>Stock : {2}</p>
-                    <p>Payment : {"₹ 200"}</p>
+                    <p>Stock : {Stock}</p>
+                    <p>Payment : {"₹ "+Payment}</p>
                 </div>
-                <p>Mandi : {"XYZ"}</p>
+                <p>Current Heighest Bid : {currentHeighestBid}</p>
             </div>
         </div>
     </Card>

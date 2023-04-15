@@ -23,7 +23,7 @@ const HistSec = styled.div`
 
 
 function HistorySection() {
-  const items = [
+  const orderItems = [
     { id: 0, Name: "Name", Stock: 1, Mandi: "XYZ", Payment: 500, img: dummy },
     { id: 1, Name: "Name", Stock: 2, Mandi: "XYZ", Payment: 600, img: dummy },
     { id: 2, Name: "Name", Stock: 3, Mandi: "XYZ", Payment: 700, img: dummy },
@@ -31,9 +31,9 @@ function HistorySection() {
     { id: 4, Name: "Name", Stock: 5, Mandi: "XYZ", Payment: 900, img: dummy },
     { id: 5, Name: "Name", Stock: 6, Mandi: "XYZ", Payment: 1000, img: dummy },
   ];
-  const history = items.map((item) => (
-    <li key={item.id}>
-      <HistoryCard {...item} />
+  const history = orderItems.map((orderedItem) => (
+    <li key={orderedItem.id}>
+      <HistoryCard {...orderedItem} />
     </li>
   ));
 
