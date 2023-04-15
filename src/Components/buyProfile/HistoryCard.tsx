@@ -51,7 +51,7 @@ function HistoryCard({ Name, Stock, Payment, Mandi, img }: Props) {
           <h3>{Name}</h3>
           <div className="row">
             <p>Stock : {Stock}</p>
-            <p>Payment : {"₹"+Payment}</p>
+            <p>Payment : {"₹ "+Payment}</p>
           </div>
           <p>Mandi : {Mandi}</p>
         </div>
