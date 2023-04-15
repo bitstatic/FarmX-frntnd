@@ -13,7 +13,7 @@ const NavBar= styled.nav`
   *{
     margin: 1rem;
   }
-  margin-bottom: 5rem;
+  margin-bottom: 0rem;
 `
 function Navbar() {
   return (
