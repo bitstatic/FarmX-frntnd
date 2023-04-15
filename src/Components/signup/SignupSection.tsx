@@ -3,6 +3,7 @@ import TextField from "../TextField";
 import Button from "../Button";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signin = styled.section`
   display: flex;
@@ -24,11 +25,18 @@ const Signin = styled.section`
   }
 `;
 
+
 function SignupSection() {
+  const nav=useNavigate();
+  function verify() {
+    console.log("Data sent to Server");
+    console.log("Awaiting Server Verification");
+    nav("../home")
+  }
   const [Visibility, setVisibility] = React.useState(true);
   function changeVis() {
     if (Visibility) setVisibility(false);
-    else console.log("Server Verification sent")
+    else verify()
   }
   return (
     <Signin>
@@ -38,21 +46,12 @@ function SignupSection() {
       {Visibility && <TextField name="Name" id="name" type="text" />}
       {Visibility && <TextField name="Email ID" id="mail" type="text" />}
       {Visibility && <TextField name="Password" id="pass" type="password" />}
-      {Visibility && (
-        <TextField name="Confirm Password" id="pass2" type="password" />
-      )}
+      {Visibility && <TextField name="Confirm Password" id="pass2" type="password" />}
       {!Visibility && <TextField name="Area Pin Code" id="pin" type="text" />}
       {!Visibility && <TextField name="Phone Number" id="phone" type="text" />}
-      {!Visibility && (
-        <TextField name="Date Of Birth (DD/MM/YYY)" id="dob" type="password" />
-      )}
+      {!Visibility && <TextField name="Date Of Birth (DD/MM/YYY)" id="dob" type="password" />}
 
-      <Button
-        Text="Sign Up"
-        onClick={() => {
-          changeVis();
-        }}
-      />
+      <Button Text="Sign Up" onClick={() => {changeVis();}}/>
       <span>
         Already have an account?
         <a>

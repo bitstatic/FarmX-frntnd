@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import Navbar from '../Navbar'
+import { useNavigate } from 'react-router-dom'
 
 const Homepage = styled.section`
     display: flex;
@@ -22,14 +23,18 @@ const Homepage = styled.section`
 `
 
 function Home() {
-  return (
+    const nav= useNavigate()
+    function handleClick(path:string){
+        nav("./"+path)
+    }
+    return (
     <>
         <Navbar />
         <Homepage>
             <h1>FarmX</h1>
             <div>
                 <Button Text="Selling Dashboard" onClick={()=>{console.log("Button Clicked")}}/>
-                <Button Text="Buying Profile" onClick={()=>{console.log("Button Clicked")}}/>
+                <Button Text="Buying Profile" onClick={()=>{handleClick("buy")}}/>
             </div>
         </Homepage>
     </>
