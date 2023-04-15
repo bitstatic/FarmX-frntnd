@@ -1,13 +1,13 @@
 import React from 'react'
 import {FaRegUserCircle} from "react-icons/fa"
 import styled from "styled-components"
-import logo from "./title_logo.svg"
+import logo from "../../public/title_logo.svg"
 
 const NavBar= styled.nav`
-  width: 95%;
+  min-width: 90%;
   display: flex;
   justify-content: space-between;
-  padding: 0rem 0rem;
+  padding: 1rem 1rem;
 `
 function Navbar() {
   return (
