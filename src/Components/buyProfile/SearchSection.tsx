@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import SearchField from './SearchField'
 import Button from '../Button'
+import { useNavigate } from 'react-router-dom'
 
 const SearchSec = styled.div`
 
@@ -16,11 +17,16 @@ const SearchSec = styled.div`
 `
 
 function SearchSection() {
+  const nav = useNavigate()
+  function handleClick() {
+    console.log("Button Clicked")
+    nav("/home/buy/search")
+  }
   return (
     <SearchSec>
         <SearchField id='search-item' type='text' name='Search' />
         <SearchField id='mandi' type='text' name='Mandi' />
-        <Button Text="Search" onClick={() => {console.log("Button Clicked")}}/>
+        <Button Text="Search" onClick={() => {handleClick()}}/>
     </SearchSec>
   )
 }

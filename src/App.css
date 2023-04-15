@@ -1,6 +1,7 @@
 
 .App{
     margin: auto;
+    position: relative;
     /* background-color: #f0f2f5; */
     background-color: #fff;
     border-radius: 0.75rem;
@@ -10,8 +11,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
+    align-items: center;
+    justify-content: start;
     overflow-y: scroll;
 }
 .App::-webkit-scrollbar {

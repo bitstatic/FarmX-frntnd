@@ -4,6 +4,7 @@ import HistoryCard from "./HistoryCard";
 import dummy from "/imagedummy.png";
 
 const HistSec = styled.div`
+  width: 100%;
   >ul{
     display: flex;
     flex-direction: column;
@@ -15,6 +16,7 @@ const HistSec = styled.div`
     border-radius: 5px;
   }
     li{
+      width: 100%;
       list-style: none;
     }
 `
