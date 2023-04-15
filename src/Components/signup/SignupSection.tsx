@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Signin = styled.section`
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   gap: 50px;
   flex-direction: column;
+  justify-content: center;
   // padding-bottom: rem;
   h1 {
     margin: 5vh 0rem;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const TextArea= styled.input`
   background-color: #fff;
-  width: 80%;
+  width: 70%;
   border: none;
   border-bottom: 1px solid #000;
   padding: 5px;

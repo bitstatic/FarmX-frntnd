@@ -5,8 +5,11 @@ import Button from '../Button'
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = styled.section`
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 50px;
     flex-direction: column;
     padding-bottom: 10rem;
