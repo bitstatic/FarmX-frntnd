@@ -15,7 +15,7 @@ const NavBar= styled.nav`
   top: 0px;
   background-color: #fff;
   z-index: 100;
-  *{
+  > img, a{
     margin: 1rem;
   }
   margin-bottom: 0rem;
@@ -24,14 +24,16 @@ const NavBar= styled.nav`
   }
 `
 function Navbar() {
-  const nav= useNavigate()
-  function handleClick(){
-      nav("/home")
-  }
+  const navigate = useNavigate()
+    function nav(path: string) {
+        navigate(path)
+    }
   return (
     <NavBar>
-        <img src={logo} alt=""  width={"50px"} onClick={() => {handleClick()}}/>
-        <FaRegUserCircle size="3rem" />
+        <img src={logo} alt=""  width={"50px"} onClick={() => {nav("/home")}}/>
+        <a onClick={() => {nav('/')}}>
+          <FaRegUserCircle size="3rem" />
+        </a>
     </NavBar>
   )
 }

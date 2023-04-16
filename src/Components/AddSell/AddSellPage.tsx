@@ -62,11 +62,11 @@ function AddSellPage() {
             <h1>FarmX</h1>
             <h2>Add To Your Selling List</h2>
             <TextField change={handleNameChange} name='Name' id='name' type='text'/>
-            <TextField change={handleMcodeChange} name='Mandi Code' id='mcode' type='text'/>
-            <TextField change={handlePhnChange} name='Phone Number' id='phn' type='text'/>
-            <TextField change={handleStockChange} name='Stock' id='stock' type='text'/>
-            <TextField change={handleAskChange} name='Ask Price' id='ask' type='text'/>
-            <TextField change={handleMspChange} name='Minimum Selling Price' id='msp' type='text'/>
+            <TextField change={handleMcodeChange} name='Mandi Code' id='mcode' type='number'/>
+            <TextField change={handlePhnChange} name='Phone Number' id='phn' type='number'/>
+            <TextField change={handleStockChange} name='Stock' id='stock' type='number'/>
+            <TextField change={handleAskChange} name='Ask Price' id='ask' type='number'/>
+            <TextField change={handleMspChange} name='Minimum Selling Price' id='msp' type='number'/>
             <UploadImg />
             <Button Text={"Add"} onClick={() => {AddToSellList()}}/>
         </Container>

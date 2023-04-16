@@ -55,9 +55,9 @@ function RegisterPage() {
         <Container>
             <h1>FarmX</h1>
             <p>Register for a Mandi</p>
-            <TextField change={handleMandiCodeChange} name="Mandi Code" id="mcode" type="text"/>  
+            <TextField change={handleMandiCodeChange} name="Mandi Code" id="mcode" type="number"/>  
             <TextField change={handleNameChange} name="Name" id="name" type="text"/>
-            <TextField change={handlePhoneNumberChange} name="Phone Number" id="phn" type="text"/>
+            <TextField change={handlePhoneNumberChange} name="Phone Number" id="phn" type="number"/>
             <Button Text="Register" onClick={() => {verifyRegister()}}/>
         </Container>
     </>
