@@ -14,6 +14,8 @@ import ConfirmationPage from "./Components/OrderConfirmation/OrderConfirmationPa
 import SellerDashboard from "./Components/SellerDashboard/SellerDashboardPage";
 import SellList from "./Components/SellList/SellListPage";
 import AddSellPage from "./Components/AddSell/AddSellPage";
+import RegisterPage from "./Components/MandiRegister/RegisterPage";
+import GeneralCon from "./Components/GeneralConfirmation/GeneralConfirmation";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/dashboard" element={<SellerDashboard />} />
         <Route path="/dashboard/sell-list" element={<SellList />} />
         <Route path="/dashboard/add-sell" element={<AddSellPage />} />
+        <Route path="/dashboard/register-page" element={<RegisterPage />} />
+        <Route path="/dashboard/confirm" element={<GeneralCon />} />
       </Routes>
     </div>
   );

@@ -52,7 +52,7 @@ function AddSellPage() {
   function AddToSellList(){
     console.log("Selling Data fetched " ,sellingData);
     console.log("Server Verification request sent : Your item is added to the selling list");
-    nav("../home")
+    nav("../dashboard/confirm")
   }
 
   return (

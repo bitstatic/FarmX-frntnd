@@ -42,7 +42,7 @@ function SellerDashboard() {
             <h2>Dashboard</h2>
             <div className='buttons'>
                 <Button Text={"Current Sell List"} onClick={() => {nav("sell-list")}}/>
-                <Button Text={"Register for Mandi"} onClick={() => {}}/>
+                <Button Text={"Register for Mandi"} onClick={() => {nav("register-page")}}/>
             </div>
             <p>Past Sale:</p>
             <SaleSec />
