@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Navbar from '../Navbar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import KeyValuePair from '../KeyValuePair';
-import TextField from '../TextField';
 import Button from '../Button';
 
 // interface props {
@@ -28,6 +27,18 @@ const Container = styled.section`
     }
     button{
         width: 15rem;
+    }
+    #want-stock{
+        background-color: #fff;
+        width: fit-content;
+        border: none;
+        border-bottom: 1px solid #000;
+        padding: 5px;
+        margin: 0.2rem 0rem;
+        font-size: 1.25rem;
+        :focus{
+            outline: none;
+        }
     }
 `
 
@@ -55,7 +66,7 @@ function PlaceBidPage() {
             <hr />
             <KeyValuePair Key='Pickup Date' Value={Date} />
             <hr />
-            <TextField name='Stock intended to be bought' id='want-stock' type='number'/>
+            <input placeholder='Enter amount of stock' id='want-stock' type='number'/>
             <Button Text="Place Bid" onClick={() => {placeBid()}} />
         </Container>
     </>
