@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from "react";
 import styled from 'styled-components'
 import Navbar from '../Navbar'
 import UploadImg from './UploadImg'
 import TextField from '../TextField'
 import Button from '../Button'
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.section`
     height: 100%;
@@ -18,20 +19,56 @@ const Container = styled.section`
 `
 
 function AddSellPage() {
+  const nav = useNavigate();
+
+  const [sellingData,setSellingData] = useState({
+    name: "",
+    mcode: "",
+    phn: "",
+    stock: "",
+    ask: "",
+    msp: "",
+  });
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSellingData({...sellingData, name: e.target.value});
+  };
+  const handleMcodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSellingData({...sellingData, mcode: e.target.value});
+  };
+  const handlePhnChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setSellingData({...sellingData, phn: e.target.value});
+  };
+  const handleStockChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setSellingData({...sellingData, stock: e.target.value});
+  }
+  const handleAskChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setSellingData({...sellingData, ask: e.target.value});
+  }
+  const handleMspChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setSellingData({...sellingData, msp: e.target.value});
+  }
+
+  function AddToSellList(){
+    console.log("Selling Data fetched " ,sellingData);
+    console.log("Server Verification request sent : Your item is added to the selling list");
+    nav("../home")
+  }
+
   return (
     <>
         <Navbar />
         <Container>
             <h1>FarmX</h1>
             <h2>Add To Your Selling List</h2>
-            <TextField name='Name' id='name' type='text'/>
-            <TextField name='Mandi Code' id='mcode' type='text'/>
-            <TextField name='Phone Number' id='phn' type='text'/>
-            <TextField name='Stock' id='stock' type='text'/>
-            <TextField name='Ask Price' id='ask' type='text'/>
-            <TextField name='Minimum Selling Price' id='msp' type='text'/>
+            <TextField change={handleNameChange} name='Name' id='name' type='text'/>
+            <TextField change={handleMcodeChange} name='Mandi Code' id='mcode' type='text'/>
+            <TextField change={handlePhnChange} name='Phone Number' id='phn' type='text'/>
+            <TextField change={handleStockChange} name='Stock' id='stock' type='text'/>
+            <TextField change={handleAskChange} name='Ask Price' id='ask' type='text'/>
+            <TextField change={handleMspChange} name='Minimum Selling Price' id='msp' type='text'/>
             <UploadImg />
-            <Button Text={"Add"} onClick={() => {}}/>
+            <Button Text={"Add"} onClick={() => {AddToSellList()}}/>
         </Container>
     </>
   )
