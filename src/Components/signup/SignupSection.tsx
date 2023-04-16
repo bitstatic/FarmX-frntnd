@@ -31,28 +31,64 @@ const Signin = styled.section`
 
 function SignupSection() {
   const nav=useNavigate();
+
+  const [userData,setUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    pin: "",
+    phone: "",
+    dob: "",
+  });
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserData({...userData, name: e.target.value});
+  };
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserData({...userData, email: e.target.value});
+  };
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setUserData({...userData, password: e.target.value});
+  };
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setUserData({...userData, confirmPassword: e.target.value});
+  };
+  const handlePinChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setUserData({...userData, pin: e.target.value});
+  };
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setUserData({...userData, phone: e.target.value});
+  };
+  const handleDobChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setUserData({...userData, dob: e.target.value});
+  };
+
+
   function verify() {
-    console.log("Data sent to Server");
+    console.log("Data sent to Server: " , userData);
     console.log("Awaiting Server Verification");
     nav("../home")
   }
+
   const [Visibility, setVisibility] = React.useState(true);
   function changeVis() {
     if (Visibility) setVisibility(false);
     else verify()
   }
+
   return (
     <Signin>
       <h1>FarmX</h1>
       <h2>Sign Up</h2>
 
-      {Visibility && <TextField name="Name" id="name" type="text" />}
-      {Visibility && <TextField name="Email ID" id="mail" type="text" />}
-      {Visibility && <TextField name="Password" id="pass" type="password" />}
-      {Visibility && <TextField name="Confirm Password" id="pass2" type="password" />}
-      {!Visibility && <TextField name="Area Pin Code" id="pin" type="text" />}
-      {!Visibility && <TextField name="Phone Number" id="phone" type="text" />}
-      {!Visibility && <TextField name="Date Of Birth (DD/MM/YYY)" id="dob" type="password" />}
+      {Visibility && <TextField change={handleNameChange} name="Name" id="name" type="text" />}
+      {Visibility && <TextField change={handleEmailChange} name="Email ID" id="mail" type="text" />}
+      {Visibility && <TextField change={handlePasswordChange} name="Password" id="pass" type="password" />}
+      {Visibility && <TextField change={handleConfirmPasswordChange} name="Confirm Password" id="pass2" type="password" />}
+      {!Visibility && <TextField change={handlePinChange} name="Area Pin Code" id="pin" type="text" />}
+      {!Visibility && <TextField change={handlePhoneChange} name="Phone Number" id="phone" type="text" />}
+      {!Visibility && <TextField change={handleDobChange} name="Date Of Birth (DD/MM/YYY)" id="dob" type="date" />}
 
       <Button Text="Sign Up" onClick={() => {changeVis();}}/>
       <span>

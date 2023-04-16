@@ -18,11 +18,12 @@ interface props{
   name: string;
   id: string;
   type: string;
+  change : (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function TextField({name, id, type}:props) {
+function TextField({name, id, type , change}:props) {
   return (
-    <TextArea id={id} type={type} placeholder={name}></TextArea>
+    <TextArea onChange={change} id={id} type={type} placeholder={name}></TextArea>
   )
 }
 
