@@ -7,7 +7,7 @@ FarmX is an online marketplace where farmers can sell their crop yield on a dail
 **For Backend refer to -** [*This Repo*](https://github.com/bitstatic/farmex).
 
 ## Hosted URL
-The Hosted URL for the project is yet to be added.
+https://timely-strudel-932c92.netlify.app/
 
 ## Technology Stack
 FarmX is a React project using Google Cloud Platform as Backend. The tech stack used includes:
