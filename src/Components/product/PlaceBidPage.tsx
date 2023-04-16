@@ -37,7 +37,8 @@ function PlaceBidPage() {
     const {Name, Stock, Payment, address, Date} = location.state
     function placeBid() {
         console.log("Bid To be Placed and Data to be read from the form")
-        navigate('/bidPlaced')
+        // navigate(-1)
+        navigate("/home/buy/search/product/confirm")
     }
     // const wantedStock = document.getElementById('want-stock').value;
     // console.log(wantedStock)
