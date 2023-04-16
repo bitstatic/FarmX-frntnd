@@ -21,9 +21,9 @@ interface props{
   change : (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function TextField({name, id, type , change}:props) {
+function TextField({ ...prop }:props) {
   return (
-    <TextArea onChange={change} id={id} type={type} placeholder={name}></TextArea>
+    <TextArea onChange={prop.change} id={prop.id} type={prop.type} placeholder={prop.name}></TextArea>
   )
 }
 

@@ -18,11 +18,14 @@ interface props{
     name: string;
     id: string;
     type: string;
+    change : (e: React.ChangeEvent<HTMLInputElement>) => void;
   }
 
-function SearchField({name, id, type}:props) {
-  return (<SearchArea id={id} type={type} placeholder={name} />)
-}
+  function SearchField({ ...prop }:props) {
+    return (
+    <SearchArea onChange={prop.change} id={prop.id} type={prop.type} placeholder={prop.name} />
+    )
+  }
 
 
 export default SearchField

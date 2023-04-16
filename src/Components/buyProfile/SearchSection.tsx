@@ -20,17 +20,32 @@ const SearchSec = styled.div`
 
 function SearchSection() {
   const nav = useNavigate()
+
+  const [searchInfo, setSearchInfo] = React.useState({
+    searchItem: '',
+    mandi: '',
+  })
+  
+  const handleSearchItemChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInfo({ ...searchInfo, searchItem: e.target.value })
+  }
+  const handleMandiChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInfo({ ...searchInfo, mandi: e.target.value })
+  }
+
   function handleClick() {
-    console.log("Button Clicked")
+    console.log("search clicked : ", searchInfo);
     nav("/home/buy/search")
   }
+
   return (
     <SearchSec>
-        <SearchField id='search-item' type='text' name='Search' />
-        <SearchField id='mandi' type='text' name='Mandi' />
+        <SearchField change={handleSearchItemChange} id='search-item' type='text' name='Search' />
+        <SearchField change={handleMandiChange} id='mandi' type='text' name='Mandi' />
         <Button Text="Search" onClick={() => {handleClick()}}/>
     </SearchSec>
   )
+
 }
 
 export default SearchSection
