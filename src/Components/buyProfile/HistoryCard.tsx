@@ -42,18 +42,18 @@ interface Props {
   img: string;
 }
 
-function HistoryCard({ Name, Stock, Payment, Mandi, img }: Props) {
+function HistoryCard({ ...prop }: Props) {
   return (
     <Card>
       <div className="hist-card-container">
-        <img src={img} alt="" />
+        <img src={prop.img} alt="" />
         <div className="card-text">
-          <h3>{Name}</h3>
+          <h3>{prop.Name}</h3>
           <div className="row">
-            <p>Stock : {Stock}</p>
-            <p>Payment : {"₹ "+Payment}</p>
+            <p>Stock : {prop.Stock}</p>
+            <p>Payment : {"₹ "+prop.Payment}</p>
           </div>
-          <p>Mandi : {Mandi}</p>
+          <p>Mandi : {prop.Mandi}</p>
         </div>
       </div>
     </Card>
