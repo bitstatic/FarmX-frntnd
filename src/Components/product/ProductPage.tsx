@@ -5,10 +5,11 @@ import Navbar from '../Navbar'
 import image from "/prodDummyImg.png"
 import Button from '../Button'
 import KeyValuePair from '../KeyValuePair'
+import {IoArrowBackOutline} from 'react-icons/io5'
 
 const Container = styled.section`
     height: 100%;
-    width: 90%;
+    width: 80%;
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -16,6 +17,16 @@ const Container = styled.section`
     gap: 2rem;
     justify-content: start;
     .hero{
+        .top{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            > a{
+                text-decoration: none;
+                color: black;
+            }
+        }
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -60,10 +71,10 @@ const Container = styled.section`
 function ProductPage() {
     const location = useLocation()
     const {Name, Stock, Payment} = location.state
-    console.log(location.state)
+    // console.log(location.state)
     const navigate= useNavigate()
-    function handleBid(){
-        navigate("./bid", {state: {Name, Stock, Payment,  address: "address", Date: "01/05/2023"}})
+    function handlebutton(path : string){
+        navigate(path, {state: {Name, Stock, Payment,  address: "address", Date: "01/05/2023"}})
     }
     
     return (
@@ -71,7 +82,10 @@ function ProductPage() {
             <Navbar />
             <Container>
                 <div className='hero'>
-                    <h1>{Name}</h1>
+                    <div className='top'>
+                        <a onClick={() => navigate(-1)}><IoArrowBackOutline size={45} /></a>
+                        <h1>{Name}</h1>
+                    </div>
                     <img src={image} alt="" />
                     <p className='seller'>By Farmer's Name</p>
                 </div>
@@ -85,8 +99,8 @@ function ProductPage() {
                     <a className='view-bid-button'>View All Bids &#62;</a>
                 </div>
                 <div className='buttons'>
-                    <Button Text={"Place Bid"} onClick={()=> {handleBid()}}/>
-                    <Button Text={"Buy at ₹"+Payment} onClick={()=> {console.log("Buy function called")}}/>
+                    <Button Text={"Place Bid"} onClick={()=> {handlebutton("bid")}}/>
+                    <Button Text={"Buy at ₹"+Payment} onClick={()=> {handlebutton("buy")}}/>
                 </div>
             </Container>
         </>

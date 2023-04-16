@@ -9,6 +9,7 @@ const PageLayout = styled.section`
     height: fit-content;
     position: relative;
     top: 5rem;
+    width: 80%;
     padding-bottom: 1rem;
     justify-content: start;
     align-items: center;

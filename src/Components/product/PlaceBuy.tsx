@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Navbar from '../Navbar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import KeyValuePair from '../KeyValuePair';
+import TextField from '../TextField';
 import Button from '../Button';
 
 // interface props {
@@ -29,21 +30,9 @@ const Container = styled.section`
         display: flex;
         gap: 1rem;
     }
-    #want-stock{
-        background-color: #fff;
-        width: fit-content;
-        border: none;
-        border-bottom: 1px solid #000;
-        padding: 5px;
-        margin: 0.2rem 0rem;
-        font-size: 1.25rem;
-        :focus{
-            outline: none;
-        }
-    }
 `
 
-function PlaceBidPage() {
+function PlaceBuyPage() {
     const location = useLocation()
     const navigate = useNavigate()
     const {Name, Stock, Payment, address, Date} = location.state
@@ -69,10 +58,10 @@ function PlaceBidPage() {
             <hr />
             <KeyValuePair Key='Pickup Date' Value={Date} />
             <hr />
-            <input placeholder='Enter amount of stock' id='want-stock' type='number'/>
+            <TextField name='Stock intended to be bought' id='want-stock' type='number'/>
             <div className='buttons'>
                 <Button Text="Cancel" onClick={() => {placeBid("-1")}} />
-                <Button Text="Place Bid" onClick={() => {placeBid("/home/buy/search/product/confirm")}} />
+                <Button Text="Buy Now" onClick={() => {placeBid("/home/buy/search/product/confirm")}} />
             </div>
         </Container>
     </>
@@ -80,4 +69,4 @@ function PlaceBidPage() {
   )
 }
 
-export default PlaceBidPage
+export default PlaceBuyPage

@@ -11,7 +11,7 @@ const Searches = styled.section`
   justify-content: start;
   gap: 1rem;
   height: fit-content;
-  width: 100%;
+  width: 80%;
   > h1{
     font-size: 2.5rem;
     font-weight: 300;

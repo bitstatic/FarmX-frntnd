@@ -4,7 +4,7 @@ import SearchCard from './SearchCard'
 import dummy from "/imagedummy.png";
 
 const SearchSec = styled.div`
-    width: 85%;
+    width: 100%;
     >ul{
         display: flex;
         flex-direction: column;

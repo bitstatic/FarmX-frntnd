@@ -9,6 +9,7 @@ import BuyProf from "./Components/buyProfile/BuyProf";
 import SearchPage from "./Components/searchPage/SearchPage";
 import ProductPage from "./Components/product/ProductPage";
 import PlaceBidPage from "./Components/product/PlaceBidPage";
+import PlaceBuyPage from "./Components/product/PlaceBuy";
 import ConfirmationPage from "./Components/Confirmation/ConfirmationPage";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/home/buy/search" element={<SearchPage/>} />
         <Route path="/home/buy/search/product" element={<ProductPage/>} />
         <Route path="/home/buy/search/product/bid" element={<PlaceBidPage/>} />
+        <Route path="/home/buy/search/product/buy" element={<PlaceBuyPage/>} />
         <Route path="/home/buy/search/product/confirm" element={<ConfirmationPage/>} />
       </Routes>
     </div>
