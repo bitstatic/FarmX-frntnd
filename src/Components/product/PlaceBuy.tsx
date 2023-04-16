@@ -1,18 +1,12 @@
-import React from 'react'
+import React, { useState } from "react";
 import styled from 'styled-components'
 import Navbar from '../Navbar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import KeyValuePair from '../KeyValuePair';
-import TextField from '../TextField';
 import Button from '../Button';
 
-// interface props {
-//     price: number;
-//     location: string;
-//     Date: string;
-// }
-
 const Container = styled.section`
+    min-height: calc( 100vh - 6.5rem);
     height: fit-content;
     margin-top: 5rem;
     width: 80%;
@@ -21,14 +15,24 @@ const Container = styled.section`
     align-items: center;
     justify-content: start;
     gap: 1rem;
-    #want-stock{
-        width: 80%;
-        font-size: 1.5rem;
-        margin: 1rem 0;
-    }
     .buttons{
         display: flex;
         gap: 1rem;
+    }
+    #want-stock{
+        margin-bottom: auto;
+        width: 50%; 
+        min-width: 13rem;
+        font-size: 1.5rem;
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid #000;
+        padding: 5px;
+        font-size: 1.25rem;
+        :focus{
+            outline: none;
+        }
+    }
     }
 `
 
@@ -36,15 +40,36 @@ function PlaceBuyPage() {
     const location = useLocation()
     const navigate = useNavigate()
     const {Name, Stock, Payment, address, Date} = location.state
+
+    const [wantStock, setWantStock] = useState(1);
+    
+    const handleWantStock = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (parseInt(event.target.value) <= Stock && parseInt(event.target.value) > 0) {
+            setWantStock(parseInt(event.target.value));
+        }
+        else {
+            if(parseInt(event.target.value) > Stock){
+                alert("You can't buy more than available stock");
+                event.target.value = Stock.toString();
+            }
+            if(parseInt(event.target.value) < 1){
+                alert("You can't buy less than 1 stock");
+                event.target.value = "1";
+            }
+        }
+
+    };
+
     function placeBid(path: string) {
-        console.log("Bid To be Placed and Data to be read from the form")
         if (path === "-1") {
             navigate(-1)
         }
-        else navigate(path)
+        else {
+            console.log("Bid To be Placed and Data is : ", wantStock) // Data to be read from the form
+            navigate(path)
+        }
     }
-    // const wantedStock = document.getElementById('want-stock').value;
-    // console.log(wantedStock)
+
   return (
     <>
         <Navbar />
@@ -52,13 +77,13 @@ function PlaceBuyPage() {
             <h1>{Name}</h1>
             <p>by Farmer's name</p>
             <hr />
-            <KeyValuePair Key='Amount to be paid' Value={"₹"+ (Payment * 1)} />
+            <KeyValuePair Key='Amount to be paid' Value={"₹"+ (Payment * wantStock)} />
             <hr />
             <KeyValuePair Key='Pickup Location' Value={address} />
             <hr />
             <KeyValuePair Key='Pickup Date' Value={Date} />
             <hr />
-            <TextField name='Stock intended to be bought' id='want-stock' type='number'/>
+            <input onChange={handleWantStock} placeholder='Enter amount of stock' id='want-stock' type='number'/>
             <div className='buttons'>
                 <Button Text="Cancel" onClick={() => {placeBid("-1")}} />
                 <Button Text="Buy Now" onClick={() => {placeBid("/home/buy/search/product/confirm")}} />
