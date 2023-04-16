@@ -14,10 +14,10 @@ const Homepage = styled.section`
     >h1{
         font-size: 4rem;
     }
-    >div{
+    > .home-buttons{
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
         margin-bottom: 5rem;
     }
 `
@@ -32,7 +32,7 @@ function Home() {
         <Navbar />
         <Homepage>
             <h1>FarmX</h1>
-            <div>
+            <div className='home-buttons'>
                 <Button Text="Selling Dashboard" onClick={()=>{console.log("Button Clicked")}}/>
                 <Button Text="Buying Profile" onClick={()=>{handleClick("buy")}}/>
             </div>

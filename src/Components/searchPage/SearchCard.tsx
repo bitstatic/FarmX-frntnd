@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import dummy from "/imagedummy.png"
+import { useNavigate } from 'react-router-dom';
 
 const Card = styled.div`
     display: flex;
@@ -44,21 +45,25 @@ interface Props {
   }
 
 function SearchCard({...prop}: Props) {
-  return (
-    <Card onClick={() => {console.log("Card cliced")}}>
-        <div className='hist-card-container'>
-            <img src={prop.img} alt="" />
-            <div className='card-text'>
-                <h3>{prop.Name}</h3>
-                <div className='row'>
-                    <p>Stock : {prop.Stock}</p>
-                    <p>Payment : {"₹ "+prop.Payment}</p>
+    const navigate = useNavigate()
+    function handleClick() {
+        navigate('./product', {state: {...prop}})
+    }
+    return (
+        <Card onClick={() => {handleClick()}}>
+            <div className='hist-card-container'>
+                <img src={prop.img} alt="" />
+                <div className='card-text'>
+                    <h3>{prop.Name}</h3>
+                    <div className='row'>
+                        <p>Stock : {prop.Stock}</p>
+                        <p>Payment : {"₹ "+prop.Payment}</p>
+                    </div>
+                    <p>Current Heighest Bid : {prop.currentHeighestBid}</p>
                 </div>
-                <p>Current Heighest Bid : {prop.currentHeighestBid}</p>
             </div>
-        </div>
-    </Card>
-  )
+        </Card>
+    )
 }
 
 export default SearchCard

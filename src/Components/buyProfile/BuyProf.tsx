@@ -8,7 +8,7 @@ const PageLayout = styled.section`
     display: flex;
     height: fit-content;
     position: relative;
-    top: 15rem;
+    top: 5rem;
     padding-bottom: 1rem;
     justify-content: start;
     align-items: center;

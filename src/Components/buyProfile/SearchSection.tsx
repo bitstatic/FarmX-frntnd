@@ -9,10 +9,12 @@ const SearchSec = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
     margin-bottom: 2rem;
     max-width: 90%;
     >Button{
-        margin-top: 1rem;
+      width: 80%;
+      margin-top: 1rem;
     }
 `
 

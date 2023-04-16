@@ -19,7 +19,7 @@
     display: none;
 }
 @media (width<500px) {
-    .App{
+    .App, nav{
         width: 100%;
     }
 }
