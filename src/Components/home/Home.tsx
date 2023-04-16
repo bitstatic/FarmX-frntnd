@@ -25,7 +25,7 @@ const Homepage = styled.section`
 function Home() {
     const nav= useNavigate()
     function handleClick(path:string){
-        nav("./"+path)
+        nav(path)
     }
     return (
     <>
@@ -33,8 +33,8 @@ function Home() {
         <Homepage>
             <h1>FarmX</h1>
             <div className='home-buttons'>
-                <Button Text="Selling Dashboard" onClick={()=>{console.log("Button Clicked")}}/>
-                <Button Text="Buying Profile" onClick={()=>{handleClick("buy")}}/>
+                <Button Text="Selling Dashboard" onClick={()=>{handleClick("/dashboard")}}/>
+                <Button Text="Buying Profile" onClick={()=>{handleClick("./buy")}}/>
             </div>
         </Homepage>
     </>

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const Card = styled.div`
   display: flex;
@@ -30,35 +30,34 @@ const Card = styled.div`
         width: 100%;
         justify-content: space-between;
       }
-
     }
   }
 `;
 
 interface Props {
-  Name: string;
-  Stock: number;
-  Payment: number;
-  Mandi: string;
+  name: string;
+  stockSold: number;
+  stockLeft: number;
+  earning: number;
   img: string;
 }
 
-function HistoryCard({ ...prop }: Props) {
+function SaleCard({ ...prop }: Props) {
   return (
     <Card>
       <div className="hist-card-container">
         <img src={prop.img} alt="" />
         <div className="card-text">
-          <h3>{prop.Name}</h3>
+          <h3>{prop.name}</h3>
           <div className="row">
-            <p>Stock : {prop.Stock}</p>
-            <p>Payment : {"₹ "+prop.Payment}</p>
+            <p>Stock Sold : {prop.stockSold}</p>
+            <p>Stock Left : {prop.stockLeft}</p>
           </div>
-          <p>Mandi : {prop.Mandi}</p>
+          <p>Earning : {"₹ "+prop.earning}</p>
         </div>
       </div>
     </Card>
   );
 }
 
-export default HistoryCard;
+export default SaleCard

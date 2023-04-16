@@ -10,7 +10,10 @@ import SearchPage from "./Components/searchPage/SearchPage";
 import ProductPage from "./Components/product/ProductPage";
 import PlaceBidPage from "./Components/product/PlaceBidPage";
 import PlaceBuyPage from "./Components/product/PlaceBuy";
-import ConfirmationPage from "./Components/Confirmation/ConfirmationPage";
+import ConfirmationPage from "./Components/OrderConfirmation/OrderConfirmationPage";
+import SellerDashboard from "./Components/SellerDashboard/SellerDashboardPage";
+import SellList from "./Components/SellList/SellListPage";
+import AddSellPage from "./Components/AddSell/AddSellPage";
 
 function App() {
   return (
@@ -26,6 +29,10 @@ function App() {
         <Route path="/home/buy/search/product/bid" element={<PlaceBidPage/>} />
         <Route path="/home/buy/search/product/buy" element={<PlaceBuyPage/>} />
         <Route path="/home/buy/search/product/confirm" element={<ConfirmationPage/>} />
+        
+        <Route path="/dashboard" element={<SellerDashboard />} />
+        <Route path="/dashboard/sell-list" element={<SellList />} />
+        <Route path="/dashboard/add-sell" element={<AddSellPage />} />
       </Routes>
     </div>
   );
