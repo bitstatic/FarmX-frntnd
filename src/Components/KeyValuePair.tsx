@@ -20,11 +20,11 @@ interface Props {
     Value: String;
   }
 
-function KeyValuePair({Key, Value}: Props) {
+function KeyValuePair({...prop}: Props) {
   return (
     <Container>
-        <p className='key'>{Key+":"}</p>
-        <p className='value'>{Value}</p>
+        <p className='key'>{prop.Key+":"}</p>
+        <p className='value'>{prop.Value}</p>
     </Container>
   )
 }

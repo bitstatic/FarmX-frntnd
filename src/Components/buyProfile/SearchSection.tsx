@@ -25,6 +25,8 @@ function SearchSection() {
     searchItem: '',
     mandi: '',
   })
+
+  const isDisabled = searchInfo.searchItem === '' || searchInfo.mandi === '';
   
   const handleSearchItemChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInfo({ ...searchInfo, searchItem: e.target.value })
@@ -42,7 +44,7 @@ function SearchSection() {
     <SearchSec>
         <SearchField change={handleSearchItemChange} id='search-item' type='text' name='Search' />
         <SearchField change={handleMandiChange} id='mandi' type='text' name='Mandi' />
-        <Button Text="Search" onClick={() => {handleClick()}}/>
+        <Button disable={isDisabled} Text="Search" onClick={() => {handleClick()}}/>
     </SearchSec>
   )
 

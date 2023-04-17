@@ -33,6 +33,8 @@ function RegisterPage() {
         phn: "",
     });
 
+    const isDisabled = RegisterInfo.mcode === "" || RegisterInfo.name === "" || RegisterInfo.phn === "";
+
     const handleMandiCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
         setRegisterInfo({...RegisterInfo, mcode: e.target.value});
     };
@@ -58,7 +60,7 @@ function RegisterPage() {
             <TextField change={handleMandiCodeChange} name="Mandi Code" id="mcode" type="number"/>  
             <TextField change={handleNameChange} name="Name" id="name" type="text"/>
             <TextField change={handlePhoneNumberChange} name="Phone Number" id="phn" type="number"/>
-            <Button Text="Register" onClick={() => {verifyRegister()}}/>
+            <Button disable={isDisabled} Text="Register" onClick={() => {verifyRegister()}}/>
         </Container>
     </>
   )

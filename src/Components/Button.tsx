@@ -33,13 +33,14 @@ const InteractButton = styled.button`
 interface prop{
   Text: String;
   onClick: () => void;
+  disable?: boolean;
   // Add : string;
 }
 
-function Button({Text ,onClick}:prop) {
+function Button({...prop}:prop) {
   return (
-    <InteractButton onClick={onClick}> 
-        {Text}
+    <InteractButton disabled={prop.disable} onClick={prop.onClick}> 
+        {prop.Text}
     </InteractButton>
   )
 }

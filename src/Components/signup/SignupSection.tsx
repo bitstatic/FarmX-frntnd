@@ -42,6 +42,10 @@ function SignupSection() {
     dob: "",
   });
 
+  const isDisabledFirst = userData.name === "" || userData.email === "" || userData.password === "" || userData.confirmPassword === "" || userData.password !== userData.confirmPassword  ;
+
+  const isDisabledSec = userData.pin === "" || userData.phone === "" || userData.dob === "";
+
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({...userData, name: e.target.value});
   };
@@ -90,7 +94,7 @@ function SignupSection() {
       {!Visibility && <TextField change={handlePhoneChange} name="Phone Number" id="phone" type="text" />}
       {!Visibility && <TextField change={handleDobChange} name="Date Of Birth (DD/MM/YYY)" id="dob" type="date" />}
 
-      <Button Text="Sign Up" onClick={() => {changeVis();}}/>
+      <Button disable={(isDisabledFirst && Visibility) || (isDisabledSec && !Visibility) } Text="Sign Up" onClick={() => {changeVis();}}/>
       <span>
         Already have an account?
         <a>

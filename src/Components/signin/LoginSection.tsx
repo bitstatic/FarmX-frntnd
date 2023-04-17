@@ -35,6 +35,8 @@ function LoginSection() {
     password: "",
   }); 
 
+  const isDisabled = loginInfo.email === "" || loginInfo.password === "";
+
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLoginInfo({...loginInfo, email: e.target.value});
   };
@@ -55,7 +57,7 @@ function LoginSection() {
         <h2>Login</h2>
         <TextField change={handleEmailChange}  name="Email" id="email" type="text"/>
         <TextField change={handlePasswordChange} name="Password" id="pass" type="password"/>
-        <Button Text="Log In" onClick={() => {verifyLogin()}}/>
+        <Button disable = {isDisabled} Text="Log In" onClick={() => {verifyLogin()}}/>
         <span>
           Don't have an account?  
           <a><Link to= '../signup'> Sign Up?</Link></a>

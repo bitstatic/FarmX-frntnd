@@ -30,6 +30,8 @@ function AddSellPage() {
     msp: "",
   });
 
+  const isDisabled = sellingData.name === "" || sellingData.mcode === "" || sellingData.phn === "" || sellingData.stock === "" || sellingData.ask === "" || sellingData.msp === "";
+
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSellingData({...sellingData, name: e.target.value});
   };
@@ -68,7 +70,7 @@ function AddSellPage() {
             <TextField change={handleAskChange} name='Ask Price' id='ask' type='number'/>
             <TextField change={handleMspChange} name='Minimum Selling Price' id='msp' type='number'/>
             <UploadImg />
-            <Button Text={"Add"} onClick={() => {AddToSellList()}}/>
+            <Button disable={isDisabled} Text={"Add"} onClick={() => {AddToSellList()}}/>
         </Container>
     </>
   )
