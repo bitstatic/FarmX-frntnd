@@ -20,6 +20,7 @@
 }
 @media (width<500px) {
     .App, nav{
+        min-width: 0px;
         width: 100%;
     }
 }

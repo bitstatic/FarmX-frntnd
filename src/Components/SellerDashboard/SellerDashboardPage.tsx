@@ -20,6 +20,7 @@ const Container = styled.section`
     > .buttons{
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap;
         justify-content: center;
         width: fit-content;
     }
