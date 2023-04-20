@@ -5,10 +5,10 @@ import logo from "/title_logo.svg"
 import { useNavigate } from 'react-router-dom'
 
 const NavBar= styled.nav`
-  width: 50%;
+  width: 100%;
   max-width: 500px;
-  min-width: 400px;
   display: flex;
+  height: 5rem;
   justify-content: space-between;
   position: fixed;
   border-radius: inherit;
