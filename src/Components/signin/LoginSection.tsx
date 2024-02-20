@@ -53,7 +53,7 @@ function LoginSection() {
 
   return (
     <Login>
-        <h1>FarmX</h1>
+        <h1>Harvest Hive</h1>
         <h2>Login</h2>
         <TextField change={handleEmailChange}  name="Email" id="email" type="text"/>
         <TextField change={handlePasswordChange} name="Password" id="pass" type="password"/>
