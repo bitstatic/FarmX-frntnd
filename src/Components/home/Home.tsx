@@ -31,7 +31,7 @@ function Home() {
     <>
         <Navbar />
         <Homepage>
-            <h1>FarmX</h1>
+            <h1>Harvest Hive</h1>
             <div className='home-buttons'>
                 <Button Text="Selling Dashboard" onClick={()=>{handleClick("/dashboard")}}/>
                 <Button Text="Buying Profile" onClick={()=>{handleClick("./buy")}}/>
