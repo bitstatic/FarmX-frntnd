@@ -1,8 +1,8 @@
-# FarmX-frntnd
+# HarvestHive-frntnd
 
 This is the Project for Solving for India Hackathon on behalf of the Team "BitStatic"
 
-FarmX is an online marketplace where farmers can sell their crop yield on a daily basis to vendors based on bidding every day.
+HarvestHive is an online marketplace where farmers can sell their crop yield on a daily basis to vendors based on bidding every day.
 
 **For Backend refer to -** [*This Repo*](https://github.com/bitstatic/farmex).
 
@@ -10,7 +10,7 @@ FarmX is an online marketplace where farmers can sell their crop yield on a dail
 https://timely-strudel-932c92.netlify.app/
 
 ## Technology Stack
-FarmX is a React project using Google Cloud Platform as Backend. The tech stack used includes:
+HarvestHive is a NextJS project using Express as Backend. The tech stack used includes:
 
 - Typescript
 - React
@@ -25,7 +25,7 @@ To run this project locally, follow the steps below:
 - Start the application using npm start
 - Open the application in your browser at http://localhost:3000/
 ## Usage
-FarmX allows farmers to sell their crop yield on a daily basis to vendors based on bidding every day. Vendors can bid on the crop yield offered by the farmers and purchase it if their bid is the highest.
+HarvestHive allows farmers to sell their crop yield on a daily basis to vendors based on bidding every day. Vendors can bid on the crop yield offered by the farmers and purchase it if their bid is the highest.
 
 ### Screenshots
 Screenshots for the project are yet to be published.
