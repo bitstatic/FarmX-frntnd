@@ -83,7 +83,7 @@ function SignupSection() {
 
   return (
     <Signin>
-      <h1>FarmX</h1>
+      <h1>Harvest Hive</h1>
       <h2>Sign Up</h2>
 
       {Visibility && <TextField change={handleNameChange} name="Name" id="name" type="text" />}
