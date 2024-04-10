@@ -17,14 +17,14 @@ const Container = styled.section`
     gap: 1rem;
     .buttons{
         display: flex;
-        gap: 1rem;
+        gap: 3rem;
     }
     #want-stock{
         margin-bottom: auto;
         width: 50%; 
         min-width: 13rem;
         font-size: 1.5rem;
-        background-color: #fff;
+        background-color: #F7FEFA;
         border: none;
         border-bottom: 1px solid #000;
         padding: 5px;

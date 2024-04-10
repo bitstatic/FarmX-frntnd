@@ -39,7 +39,7 @@ const Container = styled.section`
             width: 80%;
             font-size: 1.5rem;
             margin: 1rem 0;
-            background-color: #fff;
+            background-color: #F7FEFA;
             width: fit-content;
             border: none;
             border-bottom: 1px solid #000;

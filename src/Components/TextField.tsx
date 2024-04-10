@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TextArea= styled.input`
-  background-color: #fff;
+  background-color: #F7FEFA;
   width: 80%;
   border: none;
   border-bottom: 1px solid #000;

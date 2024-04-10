@@ -17,8 +17,8 @@ const PageLayout = styled.section`
     flex-direction: column;
     >h1{
         // margin-top: 15rem;
-        font-size: 3.5rem;
-        padding: 1rem;
+        font-size: 3rem;
+        // padding: 1rem;
     }
     >h2{
         font-size: 2.5rem;
@@ -33,7 +33,7 @@ function BuyProf() {
     <>
         <Navbar />
         <PageLayout>
-            <h1>FarmX</h1>
+            <h1>Harvest Hive</h1>
             <SearchSection />
             <h2>Your Orders</h2>
             <HistorySection />

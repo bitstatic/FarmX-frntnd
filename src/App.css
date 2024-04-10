@@ -3,7 +3,7 @@
     margin: auto;
     position: relative;
     /* background-color: #f0f2f5; */
-    background-color: #fff;
+    background-color: #F7FEFA;
     border-radius: 0.75rem;
     max-width: 500px;
     width: 50%;
@@ -25,5 +25,5 @@
     }
 }
 h1{
-    font-size: 3.5rem;
+    font-size: 3rem;
 }

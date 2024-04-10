@@ -12,13 +12,14 @@ const Homepage = styled.section`
     gap: 5rem;
     flex-direction: column;
     >h1{
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     > .home-buttons{
         display: flex;
         flex-direction: column;
         gap: 2rem;
         margin-bottom: 5rem;
+        margin-top: 2rem;
     }
 `
 

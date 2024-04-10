@@ -5,7 +5,7 @@ import logo from "/title_logo.svg"
 import { useNavigate } from 'react-router-dom'
 
 const NavBar= styled.nav`
-  width: 100%;
+  width: 55%;
   max-width: 500px;
   display: flex;
   height: 5rem;
@@ -13,7 +13,7 @@ const NavBar= styled.nav`
   position: fixed;
   border-radius: inherit;
   top: 0px;
-  background-color: #fff;
+  background-color: #F7FEFA;
   z-index: 100;
   > img, a{
     margin: 1rem;

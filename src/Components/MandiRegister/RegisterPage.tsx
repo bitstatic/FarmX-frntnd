@@ -16,11 +16,11 @@ const Container = styled.section`
     gap: 2.5rem;
     h1{
       margin: 5vh 0rem;
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
     > p{
         font-size: 1.8rem;
-        margin-bottom: -1rem;
+        margin-bottom: 1rem;
       }
 `
 
@@ -55,7 +55,7 @@ function RegisterPage() {
     <>
         <Navbar />
         <Container>
-            <h1>FarmX</h1>
+            <h1>Harvest Hive</h1>
             <p>Register for a Mandi</p>
             <TextField change={handleMandiCodeChange} name="Mandi Code" id="mcode" type="number"/>  
             <TextField change={handleNameChange} name="Name" id="name" type="text"/>

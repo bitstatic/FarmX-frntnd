@@ -1,22 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
+import logo from '/title_logo.svg';
 import Button from "../Button";
 
 const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 32vh;
+  gap: 5vh;
   justify-content: center;
   align-items: center;
   h1 {
-    padding: 3rem;
-    font-size: 5rem;
+    // padding: 3rem;
+    font-size: 3rem;
+    // color: #04110B;
   }
   span {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+    margin: 7rem;
   }
 `;
 
@@ -25,7 +28,8 @@ function SplashScreen() {
   return (
     <div>
       <Container>
-        <h1>FarmX</h1>
+        <img src={logo} alt="logo"></img>
+        <h1>Harvest Hive</h1>
         <span>
           <Button Text="Log In" onClick={()=>{nav("./login")}}/>
           <Button Text="Sign Up" onClick={()=>{nav("./signup")}}/>

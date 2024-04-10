@@ -39,7 +39,7 @@ function SellerDashboard() {
     <>
         <Navbar />
         <Container>
-            <h1>FarmX</h1>
+            <h1>Harvest Hive</h1>
             <h2>Dashboard</h2>
             <div className='buttons'>
                 <Button Text={"Current Sell List"} onClick={() => {nav("sell-list")}}/>

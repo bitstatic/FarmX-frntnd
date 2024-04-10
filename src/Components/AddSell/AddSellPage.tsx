@@ -61,7 +61,7 @@ function AddSellPage() {
     <>
         <Navbar />
         <Container>
-            <h1>FarmX</h1>
+            <h1>Harvest Hive</h1>
             <h2>Add To Your Selling List</h2>
             <TextField change={handleNameChange} name='Name' id='name' type='text'/>
             <TextField change={handleMcodeChange} name='Mandi Code' id='mcode' type='number'/>

@@ -33,7 +33,7 @@ function SellList() {
     <>
         <Navbar />
         <Container>
-            <h1>FarmX</h1>
+            <h1>Harvest Hive</h1>
             <div className='top'>
                 <h2>Current Sell list</h2>
                 <a onClick={() => {nav("/dashboard/add-sell")}} className='add-to-list'>
